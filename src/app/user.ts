@@ -1,9 +1,10 @@
 export class User {
-  constructor(public userName:string,
-     public bio:string, 
-     public repos: number,
-     public followers: number,
+  constructor(public name:string,
+     public bio:string,
+     public url: string,
+     public followers: string,
      public following: number,
-     public creationDate: Date){
+     public repos : number,
+     public avatar_url:string){
   }
 }

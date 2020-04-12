@@ -11,23 +11,20 @@
           <button type ="submit" class="btn btn-outline-success">Search user</button>
         </div>
         </div>
-        <label for="repo"> Search for Repository</label>
-      <div class ="row">
-        <div class="col-md-6">
-          <input type="text" required class="form-control" id="repo" placeholder = "Type repo's name here">
+  
         </div>
-        <div class="col-md-6">
-          <button type ="submit" class="btn btn-outline-success">Search Repo</button>
-        </div>
-        </div>
-        </div>
-      
-      
-      
+      </form>
 
-     
-
-
-    
-  </form>
+      <blockquote class="blockquote text-center">
+       <div class="row">
+         <div class="col-md-6">
+           <img src={{user.avatar_url}} alt="avatar">
+         </div>
+       </div> <p> Name: {{user.name}}</p>
+        <p>Bio: {{user.bio}}</p>
+        <p>Url: {{user.url}}</p>
+        <p>Followers: {{user.followers}}</p>
+        <p>Following : {{user.following}}</p>
+        <p>Public Repos : {{user.repos}}</p>
+      </blockquote>
 </div>
