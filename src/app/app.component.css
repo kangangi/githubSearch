@@ -1,0 +1,8 @@
+#header{
+  text-align: center;
+}
+#header img{
+  object-fit: cover;
+  width: 60px;
+  height: 60px;
+}
