@@ -15,6 +15,6 @@ export class HomeComponent implements OnInit {
   
 
   ngOnInit() {
-    this.searchService.searchRequest()
+    this.searchService.myAccount()
     this.user = this.searchService.user
 }}
