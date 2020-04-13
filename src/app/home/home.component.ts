@@ -22,8 +22,8 @@ export class HomeComponent implements OnInit {;
     this.repos = this.searchService.searchRepo("kangangi")
   }
   
- displayRepos(){
-   this.user.displayRepos = true;
+ viewRepos(){
+   this.user.displayRepos = ! this.user.displayRepos
  }
 
 }

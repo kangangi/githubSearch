@@ -14,18 +14,12 @@
      <p>Following : {{user.following}}</p>
      <p>Public Repos : {{user.repos}}</p>
      <p>Created on :{{user.create_at}}</p>
-     <button (click) = "displayRepos()" class="btn btn-outline-success">View repos</button>
+     <button (click) = "viewRepos()" class="btn btn-outline-success">View repos</button>
      
   </div></div>
 </div>
-<h2>My Repositories</h2>
-<div *ngFor='let repo of repos'>
-  <div class="card" style="width: 18rem">
-    <p>Name: {{repo.name}} </p>
-    <p>Description: {{repo.description}}</p>
-    <p>Language: {{repo.language}}</p>
-    <p>Url : {{repo.url}}</p>
-</div>
+
+<app-repo-info *ngIf='user.displayRepos' [repos] = 'repos'></app-repo-info>
 
 </div>
 
