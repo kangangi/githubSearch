@@ -1,4 +1,4 @@
-### Github Search ###
+# Github Search
 ## Author
 Diana Kangangi
 
