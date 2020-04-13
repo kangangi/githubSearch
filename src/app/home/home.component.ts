@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../user';
 import{ HttpClient} from '@angular/common/http'
+import {SearchServiceService} from '../search-service.service'
 
 @Component({
   selector: 'app-home',
@@ -10,24 +11,10 @@ import{ HttpClient} from '@angular/common/http'
 export class HomeComponent implements OnInit {
   user:User;
 
-  constructor(private http:HttpClient) { }
+  constructor(private searchService: SearchServiceService) { }
   
 
   ngOnInit() {
-    interface ApiResponse{
-     name:string,
-      bio:string, 
-      url: string,
-      followers: string,
-      following: number,
-      public_repos : number,
-      avatar_url :string
-
-    }
-
-    this.http.get<ApiResponse>("https://api.github.com/users/kangangi").subscribe(data=>{
-      this.user = new User(data.name, data.bio, data.url, data.followers, data.following, data.public_repos, data.avatar_url)
-    })
-  }
-
-}
+    this.searchService.searchRequest()
+    this.user = this.searchService.user
+}}
