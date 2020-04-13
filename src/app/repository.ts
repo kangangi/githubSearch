@@ -1,7 +1,10 @@
 export class Repository {
-  constructor(public repoName:string,
-    public repoDescription:string,
-    public repoUrl: string ){
+  public showRepo: boolean
+  constructor(public name:string,
+    public description:string,
+    public language:string,
+    public url: string ){
+      this.showRepo=true;
   }
 
 }
