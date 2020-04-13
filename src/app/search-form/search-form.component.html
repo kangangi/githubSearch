@@ -1,14 +1,35 @@
+<div class="container">
 <form>
   <div class = "form-group">
     <label for="userName"> Search for User</label>
     <div class ="row">
       <div class="col-md-6">
-        <input type="text" id ="userSearch" name="userSearch" required class="form-control"  placeholder = "Type user's name here" #userSearch >
+        <input type="text" id ="userSearch" name="userSearch" required class="form-control"  placeholder = "Type user's name here" [(ngModel)] = 'userSearch' >
       </div>
       <div class="col-md-6">
-      <button class="btn btn-outline-success" (click) = "searchUserName(userSearch)">Search User</button> 
+      <button class="btn btn-outline-success" (click) = "searchUserName()">Search User</button> 
       </div>
-
       </div>
       </div>
     </form>
+
+    <div class="card" style="width: 40rem;" id= "myGitHub">
+      <div class="row">
+        <div id ="myName" class="col-md-6">
+          <img src={{user.avatar_url}} alt="avatar">
+          <p>@{{user.login}}</p>
+        </div>
+      <div class="col-md-6"> 
+       <p> Name: {{user.name}}</p>
+       <p>Bio: {{user.bio}}</p>
+       <p>Url: {{user.url}}</p>
+       <p>Followers: {{user.followers}}</p>
+       <p>Following : {{user.following}}</p>
+       <p>Public Repos : {{user.repos}}</p>
+       <p>Created on :{{user.create_at}}</p>
+       <button (click) = "viewRepos()" class="btn btn-outline-success">View repos</button>
+
+      </div></div></div>
+      
+      <app-repo-info *ngIf='user.displayRepos' [repos] = 'repos'></app-repo-info>
+    </div>

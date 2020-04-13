@@ -41,6 +41,7 @@ export class SearchServiceService {
        user.avatar_url = response["avatar_url"]
 
        resolve()
+       console.log(response)
      },
      error=>{
      user.name= "User not found"
