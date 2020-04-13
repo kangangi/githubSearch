@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter} from '@angular/core';
 import {SearchServiceService} from '../search-service.service'
-
+import {User} from '../user' 
+import {Repository} from '../repository'
 
 @Component({
   selector: 'app-search-form',
@@ -10,16 +11,17 @@ import {SearchServiceService} from '../search-service.service'
 export class SearchFormComponent implements OnInit {
 
   @Output() searchUser = new EventEmitter();
-  @Output() searchRepo= new EventEmitter();
 
-  user:string
-  repo:string
+  userName:string
+ 
   constructor(private searchService:SearchServiceService) { }
 
-  theUserName(userName:HTMLInputElement){
-    this.searchUser.emit(userName.value)
-    this.user = userName.value
+  searchUserName(userSearch:HTMLInputElement){
+    this.searchUser.emit(userSearch.value)
+    confirm(this.userName)
   }
+
+
 
   ngOnInit(): void {
   }

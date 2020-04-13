@@ -1,27 +1,34 @@
-# GitSearchTool
+### Github Search
+## Author
+Diana Kangangi
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.1.
+## Description
+An application that uses the github Api to search for github users and their repositories.
 
-## Development server
+## Tech Used
+1. HTML 
+2. CSS and Bootsrap 
+3. Git
+4. Angular 
+5. Typescript
+6. Visual Studio Code
+7. Github API
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## How to Use
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Prerequisites
+1. For cloning this project to your local folder, install git. and use the command '$ sudo apt install git-all' in your terminal
+2. The user will also require angular $ npm install -g @angular/cli
 
-## Build
+## How To Use
+1. Run the link on this repository
+2. Run the command git clone https:/github.com/kangangi/gitSearch on the terminal to gain access to this project on your local folder.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Known Bugs
+There are no known bugs. Contact wanjikukangangi@gmail.com incase of any bugs
 
-## Running unit tests
+## Licence
+This project is under the MIT licence
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Copyright (c) 2020 **Diana Kangangi**

@@ -3,12 +3,12 @@
     <label for="userName"> Search for User</label>
     <div class ="row">
       <div class="col-md-6">
-        <input type="text" name= "userName" required class="form-control" id="userName"  placeholder = "Type user's name here" #userName >
+        <input type="text" id ="userSearch" name="userSearch" required class="form-control"  placeholder = "Type user's name here" #userSearch >
       </div>
       <div class="col-md-6">
-      <button class="btn btn-outline-succes"></button>
-        
+      <button class="btn btn-outline-success" (click) = "searchUserName(userSearch)">Search User</button> 
       </div>
+
       </div>
       </div>
     </form>
