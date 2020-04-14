@@ -1,6 +1,7 @@
-<div class ="container">
+<body>
+  <div class ="container">
 <h2>My Account</h2>
-<div class="card" style="width: 40rem;" id= "myGitHub">
+<div class="card" style="width: 40rem;" id="myGitHub">
     <div class="row">
       <div id ="myName" class="col-md-6">
         <img src={{user.avatar_url}} alt="avatar">
@@ -13,7 +14,7 @@
      <p>Followers: {{user.followers}}</p>
      <p>Following : {{user.following}}</p>
      <p>Public Repos : {{user.repos}}</p>
-     <p>Created on :{{user.create_at}}</p>
+     <p>Created on: {{user.created_at}}</p>
      <button (click) = "viewRepos()" class="btn btn-outline-success">View repos</button>
      
   </div></div>
@@ -22,5 +23,6 @@
 <app-repo-info *ngIf='user.displayRepos' [repos] = 'repos'></app-repo-info>
 
 </div>
+</body>
 
   

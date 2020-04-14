@@ -37,7 +37,7 @@ export class SearchServiceService {
        user.followers  = response["followers"]
        user.following = response["following"]
        user.repos = response["public_repos"]
-       user.create_at = response[""]
+       user.created_at = response["created_at"]
        user.avatar_url = response["avatar_url"]
 
        resolve()

@@ -10,7 +10,7 @@ import {Repository} from '../repository'
   styleUrls: ['./search-form.component.css']
 })
 export class SearchFormComponent implements OnInit {
-  
+  @Output() repo: Repository;
   userSearch:string;
   user:User;
   repos:any = [];

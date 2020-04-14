@@ -7,7 +7,7 @@ export class User
      public followers: number,
      public following: number,
      public repos : number,
-     public create_at : string,
+     public created_at : string,
      public avatar_url:string){
        this.displayRepos = false
   }

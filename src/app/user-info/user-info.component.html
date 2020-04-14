@@ -4,7 +4,7 @@
   <div class="row">
     <div id ="myName" class="col-md-6">
       <img src={{user.avatar_url}} alt="avatar">
-      <p>@{{user.login}}</p>
+      <p appItalic >@{{user.login}}</p>
     </div>
   <div class="col-md-6"> 
    <p> Name: {{user.name}}</p>
@@ -13,10 +13,20 @@
    <p>Followers: {{user.followers}}</p>
    <p>Following : {{user.following}}</p>
    <p>Public Repos : {{user.repos}}</p>
-   <p>Created on :{{user.create_at}}</p>
+   <p>Created on :{{user.created_at}}</p>
    <button (click) = "viewRepos()" class="btn btn-outline-success">View repos</button>
 
   </div></div>
 </div>
-  <app-repo-info *ngIf='user.displayRepos' [repos] = 'repos'></app-repo-info>
-</div>
+  <div *ngIf = 'user.displayRepos'>
+    <h2> Repositories</h2>
+  <div  *ngFor='let repo of repos'>
+    <div  id= "repoDetails" class="card" style="width: 40rem">
+      <p>Name: {{repo.name}} </p>
+      <p>Description: {{repo.description}}</p>
+      <p>Language: {{repo.language}}</p>
+      <p>Url : {{repo.url}}</p>
+ 
+</div></div>
+
+</div></div>
