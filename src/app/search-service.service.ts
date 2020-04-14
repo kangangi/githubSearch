@@ -10,7 +10,9 @@ import {Repository} from './repository'
 export class SearchServiceService {
   usersApi = "https://api.github.com/users/";
   userAccount = "https://github.com/"
+  reposApi = "https://api.github.com/search/repositories?q="
   repos = []
+  allrepos=[]
   
 
  constructor(private http:HttpClient) {
@@ -73,8 +75,6 @@ export class SearchServiceService {
           newRepo.language = response[i]["language"]
           newRepo.url= this.userAccount + name + "/" + newRepo.name
           this.repos.push(newRepo)
-
-          
           
         }
         resolve()
@@ -86,5 +86,40 @@ export class SearchServiceService {
     })
     return this.repos;
     }
+    searchRepobyName(name){
+
+      interface repoApiResponse{
+        name:string;
+        description:string;
+        language:string;
+        url:string;
+      }
+     
+      let promise = new Promise ((resolve,reject)=>{
+        this.allrepos.length = 0;
+        let allrepoRequest = this.reposApi + name
+        this.http.get<repoApiResponse>(allrepoRequest).toPromise().then(response=>{
+          for(let i = 0; i < response["length"]; i++){
+            let newallRepo = new Repository ("","","","")
+            newallRepo.name= response[i].item.name;
+            newallRepo.description= response[i].item.description;
+            newallRepo.language = response[i].item.language;
+            newallRepo.url= response[i].item.url;
+            this.allrepos.push(newallRepo)
+  
+          }
+          resolve()
+          console.log(allrepoRequest)
+          console.log(this.allrepos)
+          
+      }),error =>{
+        confirm("repo not found")
+        reject(error)
+      }
+      })
+      return this.allrepos;
+      }
+  
+
    }
 

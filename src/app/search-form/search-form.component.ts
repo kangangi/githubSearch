@@ -12,9 +12,12 @@ import {Repository} from '../repository'
 export class SearchFormComponent implements OnInit {
   @Output() repo: Repository;
   userSearch:string;
+  repoSearch:string;
   user:User;
-  repos:any = [];
+  repos:Repository[] = [];
+  allrepos :Repository[] =[]
   viewInfo:boolean;
+  viewRepo:boolean;
  
   constructor(private searchService:SearchServiceService) { }
 
@@ -22,6 +25,12 @@ export class SearchFormComponent implements OnInit {
     this.user = this.searchService.searchUser(this.userSearch)
     this.repos = this.searchService.searchRepo(this.userSearch)
     this.viewInfo = true;
+  }
+
+  searchRepoName(){
+    this.allrepos = this.searchService.searchRepobyName(this.repoSearch)
+    this.viewRepo = true;
+    
   }
 
 

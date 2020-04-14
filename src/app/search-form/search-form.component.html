@@ -4,16 +4,28 @@
     <label for="userName"> Search for User</label>
     <div class ="row">
       <div class="col-md-6">
-        <input type="text" id ="userSearch" name="userSearch" required class="form-control"  placeholder = "Type user's name here" [(ngModel)] = 'userSearch' >
+        <input type="text" id ="userSearch" name="userSearch" required class="form-control"  placeholder = "Type userame here" [(ngModel)] = 'userSearch' >
       </div>
       <div class="col-md-6">
       <button class="btn btn-outline-success" (click) = "searchUserName()">Search User</button> 
+      </div>
+      </div>
+
+      <label for="repoName"> Search for Repository</label>
+    <div class ="row">
+      <div class="col-md-6">
+        <input type="text" id ="repoSearch" name="repoSearch" required class="form-control"  placeholder = "Type repo's name here" [(ngModel)] = 'repoSearch' >
+      </div>
+      <div class="col-md-6">
+      <button class="btn btn-outline-success" (click) = "searchRepoName()">Search Repo </button> 
       </div>
       </div>
       </div>
     </form>
 
     <app-user-info *ngIf = 'this.viewInfo' [user] ='user'></app-user-info>
+
+    <app-repo-info *ngIf = 'this.viewRepo' [repos] = 'repos'></app-repo-info>
     </div>
 
     
