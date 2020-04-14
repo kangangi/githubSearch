@@ -12,6 +12,7 @@ import { RepoInfoComponent } from './repo-info/repo-info.component';
 import { SearchFormComponent } from './search-form/search-form.component';
 import { UserInfoComponent } from './user-info/user-info.component';
 import { ItalicDirective } from './italic.directive';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ItalicDirective } from './italic.directive';
     RepoInfoComponent,
     SearchFormComponent,
     UserInfoComponent,
-    ItalicDirective
+    ItalicDirective,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
