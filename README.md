@@ -14,8 +14,6 @@ An application that uses the github Api to search for github users and their rep
 6. Visual Studio Code
 7. Github API
 
-## How to Use
-
 
 ## Prerequisites
 1. For cloning this project to your local folder, install git. and use the command '$ sudo apt install git-all' in your terminal
