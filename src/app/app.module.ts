@@ -10,13 +10,15 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { RepoInfoComponent } from './repo-info/repo-info.component';
 import { SearchFormComponent } from './search-form/search-form.component';
+import { UserInfoComponent } from './user-info/user-info.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     RepoInfoComponent,
-    SearchFormComponent
+    SearchFormComponent,
+    UserInfoComponent
   ],
   imports: [
     BrowserModule,

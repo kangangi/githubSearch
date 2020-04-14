@@ -14,17 +14,17 @@ export class SearchFormComponent implements OnInit {
   userSearch:string;
   user:User;
   repos:any = [];
+  viewInfo:boolean;
  
   constructor(private searchService:SearchServiceService) { }
 
   searchUserName(){
     this.user = this.searchService.searchUser(this.userSearch)
     this.repos = this.searchService.searchRepo(this.userSearch)
+    this.viewInfo = true;
   }
 
-  viewRepos(){
-    this.user.displayRepos = ! this.user.displayRepos
-  }
+
 
 
   ngOnInit(): void {
