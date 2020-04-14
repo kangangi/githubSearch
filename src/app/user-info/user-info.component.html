@@ -1,6 +1,9 @@
-<div class="container">
-
-<div class="card" style="width: 40rem;" id= "myGitHub">
+<body>
+  <div class="container">
+  <h3>{{user.login|uppercase}}'s Account</h3>
+<div class="card" style="width: 45rem;" id= "myGitHub">
+  <br>
+  
   <div class="row">
     <div id ="myName" class="col-md-6">
       <img src={{user.avatar_url}} alt="avatar">
@@ -14,19 +17,12 @@
    <p>Following : {{user.following}}</p>
    <p>Public Repos : {{user.repos}}</p>
    <p>Created on :{{user.created_at}}</p>
-   <button (click) = "viewRepos()" class="btn btn-outline-success">View repos</button>
+   <button (click) = "viewRepos()" class="btn btn-outline-info">View repos</button>
+   <br><br>
 
   </div></div>
 </div>
-  <div *ngIf = 'user.displayRepos'>
-    <h2> Repositories</h2>
-  <div  *ngFor='let repo of repos'>
-    <div  id= "repoDetails" class="card" style="width: 40rem">
-      <p>Name: {{repo.name}} </p>
-      <p>Description: {{repo.description}}</p>
-      <p>Language: {{repo.language}}</p>
-      <p>Url : {{repo.url}}</p>
- 
-</div></div>
+<app-repo-info *ngIf='user.displayRepos' [repos] = 'repos'></app-repo-info>
 
-</div></div>
+ 
+</div></body>

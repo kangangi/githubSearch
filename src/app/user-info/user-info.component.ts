@@ -23,6 +23,7 @@ export class UserInfoComponent implements OnInit {
 
   viewRepos(){
     this.user.displayRepos =! this.user.displayRepos
+    
   }
 
 

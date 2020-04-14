@@ -28,7 +28,7 @@ export class SearchServiceService {
    }
    let user = new User ("","","","",0,0,0,"","")
    let promise = new Promise((resolve , reject)=>{ 
-     let userRequest = this.usersApi + name;
+     let userRequest = this.usersApi + name +(environment.accesstoken);
      this.http.get<ApiUserResponse>(userRequest).toPromise().then(response=>{
        user.name = response["name"]
        user.bio = response["bio"]
@@ -61,7 +61,7 @@ export class SearchServiceService {
     }
     let repos = []
     let promise = new Promise ((resolve,reject)=>{
-      let repoRequest = this.usersApi + name + "/repos"
+      let repoRequest = this.usersApi + name + "/repos" +(environment.accesstoken)
       this.http.get<repoApiResponse>(repoRequest).toPromise().then(response=>{
         for(let i = 0; i < response["length"]; i++){
           let newRepo = new Repository ("","","","")
@@ -70,7 +70,12 @@ export class SearchServiceService {
           newRepo.language = response[i]["language"]
           newRepo.url= response[i]["url"];
           repos.push(newRepo)
+
+          
+          
         }
+        resolve()
+        console.log(repos)
     }),error =>{
       confirm("repo not found")
       reject(error)
