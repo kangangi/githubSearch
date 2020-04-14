@@ -12,11 +12,11 @@
   <div class="col-md-6"> 
    <p> Name: {{user.name}}</p>
    <p>Bio: {{user.bio}}</p>
-   <p>Url: {{user.url}}</p>
    <p>Followers: {{user.followers}}</p>
    <p>Following : {{user.following}}</p>
    <p>Public Repos : {{user.repos}}</p>
-   <p>Created on :{{user.created_at}}</p>
+   <p>Created on :{{user.created_at|date}}, ({{user.created_at|dateCount}} day(s) ago</p>
+   <p>Url :<a href={{user.url}}> {{user.url}} </a></p>
    <button (click) = "viewRepos()" class="btn btn-outline-info">View repos</button>
    <br><br>
 

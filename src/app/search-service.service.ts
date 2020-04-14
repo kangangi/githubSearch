@@ -9,6 +9,8 @@ import {Repository} from './repository'
 })
 export class SearchServiceService {
   usersApi = "https://api.github.com/users/";
+  userAccount = "https://github.com/"
+  repos = []
   
 
  constructor(private http:HttpClient) {
@@ -23,16 +25,16 @@ export class SearchServiceService {
       followers: number;
       following: number;
       public_repos : number;
-      created_at:string;
+      created_at:Date;
       avatar_url :string;
    }
-   let user = new User ("","","","",0,0,0,"","")
+   let user = new User ("","","","",0,0,0,new Date(),"")
    let promise = new Promise((resolve , reject)=>{ 
      let userRequest = this.usersApi + name +(environment.accesstoken);
      this.http.get<ApiUserResponse>(userRequest).toPromise().then(response=>{
        user.name = response["name"]
        user.bio = response["bio"]
-       user.url = response["url"]
+       user.url = this.userAccount + name;
        user.login = response["login"]
        user.followers  = response["followers"]
        user.following = response["following"]
@@ -59,8 +61,9 @@ export class SearchServiceService {
       language:string;
       url:string;
     }
-    let repos = []
+   
     let promise = new Promise ((resolve,reject)=>{
+      this.repos.length = 0;
       let repoRequest = this.usersApi + name + "/repos" +(environment.accesstoken)
       this.http.get<repoApiResponse>(repoRequest).toPromise().then(response=>{
         for(let i = 0; i < response["length"]; i++){
@@ -68,20 +71,20 @@ export class SearchServiceService {
           newRepo.name= response[i]["name"];
           newRepo.description= response[i]["description"];
           newRepo.language = response[i]["language"]
-          newRepo.url= response[i]["url"];
-          repos.push(newRepo)
+          newRepo.url= this.userAccount + name + "/" + newRepo.name
+          this.repos.push(newRepo)
 
           
           
         }
         resolve()
-        console.log(repos)
+        
     }),error =>{
       confirm("repo not found")
       reject(error)
     }
     })
-    return repos;
+    return this.repos;
     }
    }
 

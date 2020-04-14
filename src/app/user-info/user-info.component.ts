@@ -10,14 +10,16 @@ import {SearchServiceService} from '../search-service.service'
 })
 export class UserInfoComponent implements OnInit {
   @Input() user: User;
-  @Input() repos:Repository;  
+  @Input () repos:Repository[];
+  
 
-  repos1:any =[]
+  
   constructor(private searchService: SearchServiceService) { }
 
  
   ngOnInit() {
-    this.repos1 = this.searchService.searchRepo(this.user.login)
+    this.repos = this.searchService.repos
+    console.log(this.repos)
     
   }
 

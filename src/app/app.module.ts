@@ -13,6 +13,7 @@ import { SearchFormComponent } from './search-form/search-form.component';
 import { UserInfoComponent } from './user-info/user-info.component';
 import { ItalicDirective } from './italic.directive';
 import { NavbarComponent } from './navbar/navbar.component';
+import { DateCountPipe } from './date-count.pipe';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     SearchFormComponent,
     UserInfoComponent,
     ItalicDirective,
-    NavbarComponent
+    NavbarComponent,
+    DateCountPipe
   ],
   imports: [
     BrowserModule,
