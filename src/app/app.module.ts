@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { RepoInfoComponent } from './repo-info/repo-info.component';
 import { SearchFormComponent } from './search-form/search-form.component';
 import { UserInfoComponent } from './user-info/user-info.component';
+import { ItalicDirective } from './italic.directive';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { UserInfoComponent } from './user-info/user-info.component';
     HomeComponent,
     RepoInfoComponent,
     SearchFormComponent,
-    UserInfoComponent
+    UserInfoComponent,
+    ItalicDirective
   ],
   imports: [
     BrowserModule,
