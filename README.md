@@ -19,7 +19,7 @@ An application that uses the github Api to search for github users and their rep
 1. For cloning this project to your local folder, install git. and use the command '$ sudo apt install git-all' in your terminal
 2. The user will also require angular $ npm install -g @angular/cli
 
-## How To Use
+## Setup
 1. Run the link on this repository
 2. Run the command git clone https:/github.com/kangangi/gitSearch on the terminal to gain access to this project on your local folder.
 
