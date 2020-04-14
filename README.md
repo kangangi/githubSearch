@@ -14,6 +14,12 @@ An application that uses the github Api to search for github users and their rep
 6. Visual Studio Code
 7. Github API
 
+## How to Use
+1. The user accesses the home page using the link. This page has my github profile details and the link to the actual github profile.
+2. The user can view my repositories details and their links upon clicking the view repos button
+3. The nav bar can be used to navigate between the seach page and the link page.
+4. On the search page, the user can search for a github profile using the user name and the details are displayed. The user can also acces the searched user's repos.
+
 
 ## Prerequisites
 1. For cloning this project to your local folder, install git. and use the command '$ sudo apt install git-all' in your terminal
